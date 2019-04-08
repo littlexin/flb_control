@@ -1,0 +1,35 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+
+cwd     = os.path.join(str(Dir('#')), 'drivers')
+
+# add the general drivers.
+src = Split("""
+board.c
+stm32f4xx_it.c
+usart.c
+""")
+
+# add Ethernet drivers.
+if GetDepend('RT_USING_LWIP'):
+    src += ['stm32f4xx_eth.c']
+
+# add gpio drivers.
+if GetDepend('RT_USING_PIN'):
+    src += ['gpio.c']
+	
+# add hwtimer drivers.
+if GetDepend('RT_USING_HWTIMER'):
+    src += ['drv_hwtimer.c']
+
+# add iic driver.
+if GetDepend('RT_USING_I2C') == True:
+	src += ['stm32_i2c.c']	
+
+CPPPATH = [cwd]
+
+group = DefineGroup('Drivers', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')
+

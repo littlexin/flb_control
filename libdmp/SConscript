@@ -1,0 +1,11 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+
+cwd     = os.path.join(str(Dir('#')), 'libdmp')
+src	= Glob('*.c')
+CPPPATH = [cwd, str(Dir('#'))]
+
+group = DefineGroup('libdmp', src, depend = ['RT_USING_DMP'], CPPPATH = CPPPATH)
+
+Return('group')
