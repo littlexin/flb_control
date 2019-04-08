@@ -23,7 +23,7 @@ static void GPIO_Configuration(void)
     /* GPIOC clock enable */
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
     
-    /* GPIOC Configuration: TIM4 CH1 (PD12), CH2 (PD13), CH3 (PD14), CH4 (PD15) */
+    /* GPIOC Configuration: TIM4 CH1 (PD12)  , CH2 (PD13), CH3 (PD14), CH4 (PD15) */
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
@@ -58,9 +58,12 @@ static void TIM_Configuration(void)
     Prescaler = ((SystemCoreClock /2) /2 MHz) - 1 
     */
 	
-    Prescaler = ((SystemCoreClock/2) / TIM4_CNT_CLK) - 1;
-    Period = TIM4_CNT_CLK / TIM4_PWM_CLK - 1;
+//    Prescaler = ((SystemCoreClock/2) / TIM4_CNT_CLK) - 1;
+//    Period = TIM4_CNT_CLK / TIM4_PWM_CLK - 1;
     
+		Prescaler = 839;
+		Period = 1000;
+		
     /* Time base configuration */
     TIM_TimeBaseStructure.TIM_Period = Period;
     TIM_TimeBaseStructure.TIM_Prescaler = Prescaler;
@@ -115,7 +118,7 @@ int pwm_init(void)
 {
     GPIO_Configuration();
     TIM_Configuration();
-    
+//    rt_kprintf("ok\n");
     return 0;
 }
 INIT_BOARD_EXPORT(pwm_init);

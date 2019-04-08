@@ -62,7 +62,7 @@ void rt_init_thread_entry(void* parameter)
     gdb_set_device("uart6");
     gdb_start();
 #endif
-		//rt_components_init();
+//		rt_components_init();
 	/*only use board component init*/
 	
 #ifdef RT_USING_I2C
@@ -99,6 +99,8 @@ void rt_init_thread_entry(void* parameter)
 		anop_init();
 		
 #endif /* RT_USING_ANOP */		
+//		extern int pwm_init(void);
+//		pwm_init();
 		
 #ifdef RT_USING_HWTIMER		
 //		hwtimer();

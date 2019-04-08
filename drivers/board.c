@@ -97,7 +97,7 @@ void rt_hw_board_init()
 //    stm32_hw_pin_init();
     
 		//rt_system_heap_init((void*)STM32_SRAM_BEGIN, (void*)STM32_SRAM_END);
-	
+
 		rt_components_board_init();
 	
 #ifdef RT_USING_CONSOLE

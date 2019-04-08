@@ -7,7 +7,7 @@ import rtconfig
 #else:
 #    RTT_ROOT = os.path.normpath(os.getcwd() + '/../..')
 
-RTT_ROOT = r'D:\Xin\rt-thread-code\rt-thread-master\rt-thread-master'
+RTT_ROOT = r'F:\xin\RTT_CODE\rt-thread-master'
 
 sys.path = sys.path + [os.path.join(RTT_ROOT, 'tools')]
 try:
