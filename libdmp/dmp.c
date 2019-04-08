@@ -5,7 +5,7 @@
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h"
 
-static struct rt_semaphore sem;
+//static struct rt_semaphore sem;
 
 struct rt_i2c_bus_device *i2c_bus = RT_NULL;
 struct euler_angle el = {0};

@@ -150,7 +150,12 @@
 /* samples: kernel and components samples */
 
 #define RT_USING_UART1
+#define RT_USING_UART3
+
+/* private application */
 
 #define RT_USING_DMP
+#define RT_USING_PID
+#define RT_USING_ANOP
 
 #endif

@@ -28,32 +28,32 @@
 #include <gdb_stub.h>
 #endif
 
-#define TIMER "timer0"
+//#define TIMER "timer0"
 
-static rt_err_t timer_timeout_cb(rt_device_t dev, rt_size_t size)
-{
-    rt_kprintf("enter hardware timer isr\n");
+//static rt_err_t timer_timeout_cb(rt_device_t dev, rt_size_t size)
+//{
+//    rt_kprintf("enter hardware timer isr\n");
 
-    return 0;
-}
+//    return 0;
+//}
 
-int hwtimer(void)
-{
-	rt_err_t err;
-	rt_hwtimerval_t val;
-	rt_device_t dev = RT_NULL;
-	rt_tick_t tick;
-	rt_hwtimer_mode_t mode;
-	
-	if((dev = rt_device_find(TIMER)) == RT_NULL)
-	{
-		rt_kprintf("No Device:%s\n", TIMER);
-	}
-//	else
-//		rt_kprintf("ok\n");
-	
-	return 0;
-}
+//int hwtimer(void)
+//{
+//	rt_err_t err;
+//	rt_hwtimerval_t val;
+//	rt_device_t dev = RT_NULL;
+//	rt_tick_t tick;
+//	rt_hwtimer_mode_t mode;
+//	
+//	if((dev = rt_device_find(TIMER)) == RT_NULL)
+//	{
+//		rt_kprintf("No Device:%s\n", TIMER);
+//	}
+////	else
+////		rt_kprintf("ok\n");
+//	
+//	return 0;
+//}
 
 void rt_init_thread_entry(void* parameter)
 {
@@ -63,6 +63,7 @@ void rt_init_thread_entry(void* parameter)
     gdb_start();
 #endif
 		//rt_components_init();
+	/*only use board component init*/
 	
 #ifdef RT_USING_I2C
     extern void rt_hw_i2c_init();
@@ -92,6 +93,13 @@ void rt_init_thread_entry(void* parameter)
     }
 #endif
 
+#ifdef RT_USING_ANOP
+
+		extern int anop_init(void);
+		anop_init();
+		
+#endif /* RT_USING_ANOP */		
+		
 #ifdef RT_USING_HWTIMER		
 //		hwtimer();
 #endif /*RT_USING_HWTIMER*/

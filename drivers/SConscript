@@ -27,6 +27,10 @@ if GetDepend('RT_USING_HWTIMER'):
 if GetDepend('RT_USING_I2C') == True:
 	src += ['stm32_i2c.c']	
 
+# add pwm driver.
+if GetDepend('RT_USING_PWM') == True:
+	src += ['drv_pwm.c']	
+
 CPPPATH = [cwd]
 
 group = DefineGroup('Drivers', src, depend = [''], CPPPATH = CPPPATH)
