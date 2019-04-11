@@ -10,6 +10,7 @@
   * @brief   Null
   ******************************************************************************
 */
+
 void pwm_set_duty_ratio(int channel, int ratio);
 int pwm_init(void);
 #endif

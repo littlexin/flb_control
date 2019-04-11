@@ -17,7 +17,7 @@
 #define SAMPLE_INTERVAL     1000 / DEFAULT_MPU_HZ   /* sample interval in ms */
 #define RADIUS_MIN          15.0f       /* min radius in cm */
 #define RADIUS_MAX          35.0f       /* max radius in cm */
-#define RADIUS_DEFAULT      30.0f       /* default radius in cm */
+#define RADIUS_DEFAULT      20.0f       /* default radius in cm */
 #define ANGLE_MIN           0.0f        /* min angle */
 #define ANGLE_MAX           180.0f      /* max angle */
 #define RADIAN_DEFAULT      0.0f        /* default radian */
@@ -25,7 +25,7 @@
 #define SWING_USE_POS_PID
 //#define SWING_USE_INC_PID
 
-#define OUTPUT_LIMIT        80          /* output limit for duty ratio in % */
+#define OUTPUT_LIMIT        60          /* output limit for duty ratio in % */
 #define INTEGRAL_LIMIT      300         /* integral limit in angle */
 #define INTEGRAL_SEPARATE   05          /* integral separation in angle */
 
@@ -49,30 +49,30 @@ static float radian = RADIAN_DEFAULT;
 static void swing_move(int duty_ratio_x, int duty_ratio_y)
 {
     /* direction x */
-    if (duty_ratio_x >= 0)
+    if (duty_ratio_x <= 0)
     {
         /* forward */
         pwm_set_duty_ratio(1, 0);
-        pwm_set_duty_ratio(2, duty_ratio_x);
+        pwm_set_duty_ratio(2, -duty_ratio_x);
     }
     else
     {
         /* backward */
-        pwm_set_duty_ratio(1, -duty_ratio_x);
+        pwm_set_duty_ratio(1, duty_ratio_x);
         pwm_set_duty_ratio(2, 0);
     }
     
     /* direction y */
-    if (duty_ratio_y >= 0)
+    if (duty_ratio_y <= 0)
     {
         /* forward */
         pwm_set_duty_ratio(4, 0);
-        pwm_set_duty_ratio(3, duty_ratio_y);
+        pwm_set_duty_ratio(3, -duty_ratio_y);
     }
     else
     {
         /* backward */
-        pwm_set_duty_ratio(4, -duty_ratio_y);
+        pwm_set_duty_ratio(4, duty_ratio_y);
         pwm_set_duty_ratio(3, 0);
     }
 }
@@ -355,8 +355,8 @@ void swing_init(int mode)
     pid_set_integral_limit(pid_y, -INTEGRAL_LIMIT, INTEGRAL_LIMIT);
     pid_set_integral_separation(pid_x, -INTEGRAL_SEPARATE, INTEGRAL_SEPARATE);
     pid_set_integral_separation(pid_y, -INTEGRAL_SEPARATE, INTEGRAL_SEPARATE);
-    pid_config(pid_x, POS_KP, POS_KI, POS_KD);
-    pid_config(pid_y, POS_KP, POS_KI, POS_KD);
+//    pid_config(pid_x, POS_KP, POS_KI, POS_KD);
+//    pid_config(pid_y, POS_KP, POS_KI, POS_KD);
 #elif defined (SWING_USE_INC_PID)
     pid_config(pid_x, INC_KP, INC_KI, INC_KD);
     pid_config(pid_y, INC_KP, INC_KI, INC_KD);

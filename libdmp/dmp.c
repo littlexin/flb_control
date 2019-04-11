@@ -5,7 +5,7 @@
 #include "inv_mpu.h"
 #include "inv_mpu_dmp_motion_driver.h"
 
-//static struct rt_semaphore sem;
+static struct rt_semaphore sem;
 
 struct rt_i2c_bus_device *i2c_bus = RT_NULL;
 struct euler_angle el = {0};
@@ -80,7 +80,7 @@ void dmp_thread_entry(void* parameter)
     
     while(1)
     {
-        //if (rt_sem_take(&sem, RT_WAITING_FOREVER) == RT_EOK)
+        if (rt_sem_take(&sem, RT_WAITING_FOREVER) == RT_EOK)
         {
             int index;
             float q[4];
@@ -119,7 +119,6 @@ static void dmp_thread_init(void)
         rt_thread_startup(tid);
 }
 
-#ifdef USING_DMP_INT
 
 static void dmp_notify_update(void)
 {
@@ -134,7 +133,6 @@ int dmp_reg_int_cb(struct int_param_s *int_param)
     
     return 0;
 }
-#endif /*USING_DMP_INT*/
 
 void dmp_get_ms(unsigned long *cnt)
 {

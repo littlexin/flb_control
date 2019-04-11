@@ -105,4 +105,15 @@ void rt_hw_board_init()
 #endif
 }
 
+#ifdef RT_USING_FINSH
+#include <finsh.h>
+
+void rt_hw_cpu_reset(void)
+{
+    rt_kprintf("System reset!\n");
+    NVIC_SystemReset();
+}
+MSH_CMD_EXPORT_ALIAS(rt_hw_cpu_reset, reset, software reset);
+#endif /* RT_USING_FINSH */
+
 /*@}*/

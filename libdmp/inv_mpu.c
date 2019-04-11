@@ -798,8 +798,8 @@ int mpu_init(struct int_param_s *int_param)
     if (mpu_configure_fifo(0))
         return -1;
 
-//    if (int_param)
-//        reg_int_cb(int_param);
+    if (int_param)
+        reg_int_cb(int_param);
 
 #ifdef AK89xx_SECONDARY
     setup_compass();

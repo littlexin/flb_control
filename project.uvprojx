@@ -500,6 +500,11 @@
               <FilePath>drivers\stm32f4xx_it.c</FilePath>
             </File>
             <File>
+              <FileName>platform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>drivers\platform.c</FilePath>
+            </File>
+            <File>
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>drivers\usart.c</FilePath>

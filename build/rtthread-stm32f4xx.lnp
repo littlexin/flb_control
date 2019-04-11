@@ -20,6 +20,7 @@
 ".\build\wind_swing.o"
 ".\build\board.o"
 ".\build\stm32f4xx_it.o"
+".\build\platform.o"
 ".\build\usart.o"
 ".\build\gpio.o"
 ".\build\drv_hwtimer.o"
