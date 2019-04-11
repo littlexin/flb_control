@@ -58,11 +58,11 @@ static void TIM_Configuration(void)
     Prescaler = ((SystemCoreClock /2) /2 MHz) - 1 
     */
 	
-//    Prescaler = ((SystemCoreClock/2) / TIM4_CNT_CLK) - 1;
-//    Period = TIM4_CNT_CLK / TIM4_PWM_CLK - 1;
+    Prescaler = ((SystemCoreClock/2) / TIM4_CNT_CLK) - 1;
+    Period = TIM4_CNT_CLK / TIM4_PWM_CLK - 1;
     
-		Prescaler = 839;
-		Period = 1000;
+//		Prescaler = 83;
+//		Period = 5000;
 		
     /* Time base configuration */
     TIM_TimeBaseStructure.TIM_Period = Period;
