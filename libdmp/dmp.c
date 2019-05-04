@@ -103,6 +103,7 @@ void dmp_thread_entry(void* parameter)
             el->yaw   = atan2f(2 * (q[1] * q[2] + q[0] * q[3]), 
                                q[0] * q[0] + q[1] * q[1] - q[2] * q[2]- q[3] * q[3]) * 57.3f;
         }
+						
     }
 }
 
@@ -123,6 +124,7 @@ static void dmp_thread_init(void)
 static void dmp_notify_update(void)
 {
     rt_sem_release(&sem);
+//	rt_kprintf("ok\n");
 }
 
 int dmp_reg_int_cb(struct int_param_s *int_param)
@@ -205,6 +207,8 @@ int dmp_sys_init(void)
     static struct int_param_s int_param;
     static signed char orientation[9] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
     
+//		rt_enter_critical();
+		
     i2c_bus = rt_i2c_bus_device_find("i2c1");
     RT_ASSERT(i2c_bus);
     
@@ -221,9 +225,12 @@ int dmp_sys_init(void)
     dmp_set_fifo_rate(DEFAULT_MPU_HZ);
     
     run_self_test();
-		dmp_thread_init();
     mpu_set_dmp_state(1);
+		
+		dmp_thread_init();
     
+//		rt_exit_critical();
+		
     return 0;
 }
 

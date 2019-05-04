@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\rtthread-stm32f4xx.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\rtthread-stm32f4xx.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Apr 11 19:32:19 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Sun May 05 04:21:49 2019
 <BR><P>
 <H3>Maximum Stack Usage =        844 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1134,7 +1134,7 @@ Global Symbols
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_object_allocate
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_create
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_reset
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_serial_open
 </UL>
 
@@ -2353,8 +2353,8 @@ Global Symbols
 <LI>Call Chain = rt_init_thread_entry &rArr; dmp_sys_init &rArr; run_self_test &rArr; mpu_run_self_test &rArr; accel_self_test &rArr; get_accel_prod_shift &rArr; dmp_i2c_read &rArr; rt_i2c_transfer &rArr; rt_mutex_release &rArr; rt_thread_control &rArr; rt_thread_startup &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anop_init
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_platform_init
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_platform_init
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 <LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dmp_sys_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> application.o(.text)
@@ -2846,7 +2846,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f4xx.o(RESET)
 </UL>
-<P><STRONG><a name="[17c]"></a>rt_platform_init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, platform.o(.text))
+<P><STRONG><a name="[17d]"></a>rt_platform_init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, platform.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 236<LI>Call Chain = rt_platform_init &rArr; rt_hw_exti_init &rArr; NVIC_Init &rArr; assert_failed &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_exti_init
@@ -2955,7 +2955,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f4xx.o(RESET)
 </UL>
-<P><STRONG><a name="[17d]"></a>rt_hw_i2c_init</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32_i2c.o(.text))
+<P><STRONG><a name="[17c]"></a>rt_hw_i2c_init</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, stm32_i2c.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 572<LI>Call Chain = rt_hw_i2c_init &rArr; rt_i2c_bit_add_bus &rArr; rt_i2c_bus_device_register &rArr; rt_i2c_bus_device_device_init &rArr; rt_device_register &rArr; rt_device_find &rArr; rt_exit_critical &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_memset
@@ -3891,7 +3891,7 @@ Global Symbols
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stm32_pin_mode
 <LI><a href="#[1cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Configuration
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_exti_init
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 </UL>
 
 <P><STRONG><a name="[3d5]"></a>GPIO_StructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_gpio.o(.text), UNUSED)
@@ -3930,7 +3930,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_set_scl
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_set_sda
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stm32_pin_write
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 </UL>
 
 <P><STRONG><a name="[1d2]"></a>GPIO_ResetBits</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, stm32f4xx_gpio.o(.text))
@@ -4076,7 +4076,7 @@ Global Symbols
 <LI><a href="#[1cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_Configuration
 <LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Configuration
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_exti_init
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 </UL>
 
 <P><STRONG><a name="[275]"></a>RCC_AHB2PeriphClockCmd</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, stm32f4xx_rcc.o(.text), UNUSED)
@@ -5427,7 +5427,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_i2c_bus_device_register
 </UL>
-<BR>[Called By]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
+<BR>[Called By]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 </UL>
 
 <P><STRONG><a name="[1d5]"></a>rt_device_pin_register</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, pin.o(.text))
@@ -7170,7 +7170,7 @@ Local Symbols
 <LI><a href="#[1b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 <LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_platform_init
+<BR>[Called By]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_platform_init
 </UL>
 
 <P><STRONG><a name="[6b]"></a>stm32_configure</STRONG> (Thumb, 190 bytes, Stack size 32 bytes, usart.o(.text))

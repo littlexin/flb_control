@@ -57,24 +57,16 @@
 
 void rt_init_thread_entry(void* parameter)
 {
-    /* GDB STUB */
-#ifdef RT_USING_GDB
-    gdb_set_device("uart6");
-    gdb_start();
-#endif
-	   
-		extern void rt_platform_init(void);
-    
-    rt_platform_init();
-	
 //		rt_components_init();
 	/*only use board component init*/
 	
 #ifdef RT_USING_I2C
     extern void rt_hw_i2c_init();
-    
     rt_hw_i2c_init();
 #endif
+	
+		extern void rt_platform_init(void);
+    rt_platform_init();	
 	
 #ifdef RT_USING_DMP
     extern int dmp_sys_init(void);
@@ -102,15 +94,14 @@ void rt_init_thread_entry(void* parameter)
 
 		extern int anop_init(void);
 		anop_init();
-		
 #endif /* RT_USING_ANOP */		
+		
 //		extern int pwm_init(void);
 //		pwm_init();
 		
 #ifdef RT_USING_HWTIMER		
 //		hwtimer();
-#endif /*RT_USING_HWTIMER*/
-		
+#endif /*RT_USING_HWTIMER*/		
 }
 
 int rt_application_init()
@@ -119,7 +110,7 @@ int rt_application_init()
 
     tid = rt_thread_create("init",
         rt_init_thread_entry, RT_NULL,
-        2048, RT_THREAD_PRIORITY_MAX/3, 20);
+        2048, RT_THREAD_PRIORITY_MAX/3, 40);
 
     if (tid != RT_NULL)
         rt_thread_startup(tid);

@@ -348,7 +348,7 @@ void rt_hw_i2c_init(void)
     GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
     GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_25MHz;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 
     GPIO_InitStructure.GPIO_Pin = PIN_I2C_SCL;
     GPIO_SetBits(GPIO_PORT_I2C_SCL, PIN_I2C_SCL);
@@ -358,7 +358,7 @@ void rt_hw_i2c_init(void)
     GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
     GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_25MHz;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 
     GPIO_InitStructure.GPIO_Pin = PIN_I2C_SDA;
     GPIO_SetBits(GPIO_PORT_I2C_SDA, PIN_I2C_SDA);
