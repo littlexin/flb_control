@@ -8,8 +8,8 @@
 #include "anop.h"
 #endif
 
-#define PENDULUM_CYCLE      1212.0f     /* 1101.5 ms, rod length: 0.301m */
-#define MACHINE_HEIGTH      50          /* heigth of the machine in cm */
+#define PENDULUM_CYCLE      1461.0f     /* 1101.5 ms, rod length: 0.301m */
+#define MACHINE_HEIGTH      74          /* heigth of the machine in cm */
 #define PI                  3.14159f    /* ¦° value in float type */
 #define RADIAN_TO_ANGLE     180 / PI    /* convert radian to angle */
 #define ANGLE_TO_RADIAN     PI / 180    /* convert angle to radian */
@@ -17,7 +17,7 @@
 #define SAMPLE_INTERVAL     1000 / DEFAULT_MPU_HZ   /* sample interval in ms */
 #define RADIUS_MIN          15.0f       /* min radius in cm */
 #define RADIUS_MAX          35.0f       /* max radius in cm */
-#define RADIUS_DEFAULT      20.0f       /* default radius in cm */
+#define RADIUS_DEFAULT      15.0f       /* default radius in cm */
 #define ANGLE_MIN           0.0f        /* min angle */
 #define ANGLE_MAX           180.0f      /* max angle */
 #define RADIAN_DEFAULT      0.0f        /* default radian */
@@ -33,8 +33,8 @@
 #define INC_KI              0.01f       /* Ki for incremental pid controller */
 #define INC_KD              450         /* Kd for incremental pid controller */
 
-#define POS_KP              2.2f        /* Kp for position pid controller */
-#define POS_KI              0.01f       /* Ki for position pid controller */
+#define POS_KP              1.8f        /* Kp for position pid controller */
+#define POS_KI              0.02f       /* Ki for position pid controller */
 #define POS_KD              200         /* Kd for position pid controller */
 
 static pid_t pid_x;
@@ -52,28 +52,28 @@ static void swing_move(int duty_ratio_x, int duty_ratio_y)
     if (duty_ratio_x <= 0)
     {
         /* forward */
-        pwm_set_duty_ratio(1, 0);
-        pwm_set_duty_ratio(2, -duty_ratio_x);
+        pwm_set_duty_ratio(1, -duty_ratio_x);
+        pwm_set_duty_ratio(2, 0);
     }
     else
     {
         /* backward */
-        pwm_set_duty_ratio(1, duty_ratio_x);
-        pwm_set_duty_ratio(2, 0);
+        pwm_set_duty_ratio(1, 0);
+        pwm_set_duty_ratio(2, duty_ratio_x);
     }
     
     /* direction y */
     if (duty_ratio_y <= 0)
     {
         /* forward */
-        pwm_set_duty_ratio(4, 0);
-        pwm_set_duty_ratio(3, -duty_ratio_y);
+        pwm_set_duty_ratio(4, -duty_ratio_y);
+        pwm_set_duty_ratio(3, 0);
     }
     else
     {
         /* backward */
-        pwm_set_duty_ratio(4, duty_ratio_y);
-        pwm_set_duty_ratio(3, 0);
+        pwm_set_duty_ratio(4, 0);
+        pwm_set_duty_ratio(3, duty_ratio_y);
     }
 }
 
@@ -355,8 +355,8 @@ void swing_init(int mode)
     pid_set_integral_limit(pid_y, -INTEGRAL_LIMIT, INTEGRAL_LIMIT);
     pid_set_integral_separation(pid_x, -INTEGRAL_SEPARATE, INTEGRAL_SEPARATE);
     pid_set_integral_separation(pid_y, -INTEGRAL_SEPARATE, INTEGRAL_SEPARATE);
-//    pid_config(pid_x, POS_KP, POS_KI, POS_KD);
-//    pid_config(pid_y, POS_KP, POS_KI, POS_KD);
+    pid_config(pid_x, POS_KP, POS_KI, POS_KD);
+    pid_config(pid_y, POS_KP, POS_KI, POS_KD);
 #elif defined (SWING_USE_INC_PID)
     pid_config(pid_x, INC_KP, INC_KI, INC_KD);
     pid_config(pid_y, INC_KP, INC_KI, INC_KD);

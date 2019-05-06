@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\rtthread-stm32f4xx.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\rtthread-stm32f4xx.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Sun May 05 04:21:49 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue May 07 03:00:54 2019
 <BR><P>
 <H3>Maximum Stack Usage =        844 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -616,7 +616,7 @@ Global Symbols
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_object_detach
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<BR>[Called By]<UL><LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
 <P><STRONG><a name="[109]"></a>rt_sem_create</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, ipc.o(.text), UNUSED)
@@ -1133,7 +1133,7 @@ Global Symbols
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_calloc
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_object_allocate
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_create
-<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_reset
+<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_reset
 <LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_i2c_init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_serial_open
 </UL>
@@ -1575,7 +1575,7 @@ Global Symbols
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_object_delete
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_idle_excute
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_device_destroy
-<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_delete
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_delete
 <LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;finsh_set_prompt
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_serial_close
 </UL>
@@ -2083,7 +2083,7 @@ Global Symbols
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_hw_interrupt_disable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_control
-<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
 <P><STRONG><a name="[d9]"></a>rt_thread_yield</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, thread.o(.text))
@@ -2169,7 +2169,7 @@ Global Symbols
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_self
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<BR>[Called By]<UL><LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
 <P><STRONG><a name="[3c3]"></a>rt_timer_enter_sethook</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, timer.o(.text), UNUSED)
@@ -2201,7 +2201,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_delete
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_detach
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_exit
-<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
 <P><STRONG><a name="[172]"></a>rt_timer_create</STRONG> (Thumb, 54 bytes, Stack size 32 bytes, timer.o(.text), UNUSED)
@@ -2255,7 +2255,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_suspend
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_resume
-<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
 <P><STRONG><a name="[10d]"></a>rt_timer_control</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, timer.o(.text))
@@ -2698,7 +2698,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_swing_angle
 </UL>
 
-<P><STRONG><a name="[19a]"></a>swing_init</STRONG> (Thumb, 302 bytes, Stack size 32 bytes, wind_swing.o(.text))
+<P><STRONG><a name="[19a]"></a>swing_init</STRONG> (Thumb, 342 bytes, Stack size 32 bytes, wind_swing.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 644<LI>Call Chain = swing_init &rArr; rt_thread_create &rArr; rt_object_allocate &rArr; rt_malloc &rArr; rt_sem_take &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_timer_init
@@ -2711,11 +2711,12 @@ Global Symbols
 <LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_set_integral_separation
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_set_integral_limit
 <LI><a href="#[19b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_create
+<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_swing_init
 </UL>
 
-<P><STRONG><a name="[19f]"></a>swing_deinit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, wind_swing.o(.text))
+<P><STRONG><a name="[1a0]"></a>swing_deinit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, wind_swing.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 524<LI>Call Chain = swing_deinit &rArr; pid_delete &rArr; rt_free &rArr; rt_sem_take &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_timer_stop
@@ -2723,8 +2724,8 @@ Global Symbols
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_find
 <LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_thread_delete
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_sem_detach
-<LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_reset
-<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_delete
+<LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_reset
+<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_delete
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_move
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_swing_deinit
@@ -2735,7 +2736,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[198]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_set_radius
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
+<LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wind_swing.o(FSymTab)
@@ -2745,7 +2746,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
 <LI><a href="#[199]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_set_angle
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
+<LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wind_swing.o(FSymTab)
@@ -2754,8 +2755,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 488<LI>Call Chain = cmd_swing_pid &rArr; __hardfp_atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_kprintf
-<LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_config
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
+<LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pid_config
+<LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wind_swing.o(FSymTab)
@@ -2772,7 +2773,7 @@ Global Symbols
 <P><STRONG><a name="[a1]"></a>cmd_swing_deinit</STRONG> (Thumb, 12 bytes, Stack size 16 bytes, wind_swing.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 540<LI>Call Chain = cmd_swing_deinit &rArr; swing_deinit &rArr; pid_delete &rArr; rt_free &rArr; rt_sem_take &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
-<BR>[Calls]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<BR>[Calls]<UL><LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> wind_swing.o(FSymTab)
 </UL>
@@ -5084,24 +5085,25 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_init
 </UL>
 
-<P><STRONG><a name="[1a1]"></a>pid_delete</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, pid.o(.text))
+<P><STRONG><a name="[1a2]"></a>pid_delete</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, pid.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 516<LI>Call Chain = pid_delete &rArr; rt_free &rArr; rt_sem_take &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<BR>[Called By]<UL><LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
-<P><STRONG><a name="[1a0]"></a>pid_reset</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, pid.o(.text))
+<P><STRONG><a name="[1a1]"></a>pid_reset</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, pid.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = pid_reset &rArr; rt_memset
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<BR>[Called By]<UL><LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 </UL>
 
-<P><STRONG><a name="[1a3]"></a>pid_config</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, pid.o(.text))
+<P><STRONG><a name="[19f]"></a>pid_config</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, pid.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_swing_pid
+<LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_init
 </UL>
 
 <P><STRONG><a name="[19e]"></a>pid_set_integral_separation</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, pid.o(.text))
@@ -5646,7 +5648,7 @@ Global Symbols
 <LI><a href="#[310]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 
-<P><STRONG><a name="[311]"></a>finsh_get_prompt</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, shell.o(.text))
+<P><STRONG><a name="[311]"></a>finsh_get_prompt</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, shell.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = finsh_get_prompt &rArr; strcpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msh_is_used
@@ -5698,7 +5700,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_assert_handler
 </UL>
 
-<P><STRONG><a name="[321]"></a>finsh_thread_entry</STRONG> (Thumb, 1446 bytes, Stack size 0 bytes, shell.o(.text))
+<P><STRONG><a name="[321]"></a>finsh_thread_entry</STRONG> (Thumb, 1444 bytes, Stack size 0 bytes, shell.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 508<LI>Call Chain = finsh_thread_entry &rArr; finsh_set_device &rArr; rt_device_find &rArr; rt_exit_critical &rArr; rt_schedule &rArr; _rt_scheduler_stack_check &rArr; list_thread &rArr; object_split &rArr; rt_kprintf &rArr; rt_vsnprintf &rArr; print_number
 </UL>
 <BR>[Calls]<UL><LI><a href="#[322]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_console_get_device
@@ -6100,7 +6102,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[334]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
+<BR>[Called By]<UL><LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
 </UL>
 
 <P><STRONG><a name="[33b]"></a>__set_errno</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, _rserrno.o(.text))
@@ -6112,7 +6114,7 @@ Global Symbols
 <LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
 <LI><a href="#[190]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sin
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cos
-<LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
+<LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_asinf
 <LI><a href="#[36a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_ldexp
 </UL>
@@ -6122,7 +6124,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[33c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_local_sscanf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
+<BR>[Called By]<UL><LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atof
 </UL>
 
 <P><STRONG><a name="[335]"></a>strtol</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, strtol.o(.text))
@@ -6387,7 +6389,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dmp_thread_entry
 </UL>
 
-<P><STRONG><a name="[1a2]"></a>__hardfp_atof</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, atof.o(i.__hardfp_atof))
+<P><STRONG><a name="[1a3]"></a>__hardfp_atof</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, atof.o(i.__hardfp_atof))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = __hardfp_atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real &rArr; _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; _e2e
 </UL>
 <BR>[Calls]<UL><LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
@@ -7138,7 +7140,7 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_set_duty_ratio
 </UL>
-<BR>[Called By]<UL><LI><a href="#[19f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
+<BR>[Called By]<UL><LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_deinit
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_mode_5
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_mode_4
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swing_mode_3

@@ -38,7 +38,7 @@
 #define RT_USING_DEVICE
 #define RT_USING_DEVICE_OPS
 #define RT_USING_CONSOLE
-#define RT_CONSOLEBUF_SIZE 128
+#define RT_CONSOLEBUF_SIZE 256
 #define RT_CONSOLE_DEVICE_NAME "uart1"
 #define RT_VER_NUM 0x40001
 
@@ -78,7 +78,7 @@
 #define RT_USING_I2C
 #define RT_USING_I2C_BITOPS
 //#define RT_I2C_DEBUG
-#define RT_USING_PIN
+#define RT_USING_PIN 
 #define RT_USING_PWM
 	
 /* Using WiFi */
