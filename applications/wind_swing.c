@@ -25,7 +25,7 @@
 #define SWING_USE_POS_PID
 //#define SWING_USE_INC_PID
 
-#define OUTPUT_LIMIT        60          /* output limit for duty ratio in % */
+#define OUTPUT_LIMIT        70          /* output limit for duty ratio in % */
 #define INTEGRAL_LIMIT      300         /* integral limit in angle */
 #define INTEGRAL_SEPARATE   05          /* integral separation in angle */
 
